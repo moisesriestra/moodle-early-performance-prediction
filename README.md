@@ -27,18 +27,46 @@ The algortihms tested in this experiment where:
 * SVC
 * Multi Layer Percenptron
 
-Each of them was trained in the moments defined previously and with 4 different cut-offs of grades (2.5, 5.0 and 8.5) so the total amount of models trained were 60 models. For these training processes, the following hyper-parameters were included inside a GridSearch to find the best fit of the model.
+Each of them was trained in the moments defined previously and with 4 different cut-offs of grades (2.5, 5.0 and 8.5) so the total amount of models trained were 60 models. For these training processes, the following hyper-parameters were included inside a GridSearch with cross-validation to find the best fit of the model.
 
-| Model                 | List of hyperparameters |
-|-----------------------|-------------------------|
-| NaiveBayes            | <pre lang="python">{'var_smoothing': [1e-09, 1e-08, 1e-010]} </pre>|
-| DecisionTree          | <pre lang="python">{<br> 'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'],<br> 'max_depth': [None, 5, 10, 15],<br> 'max_features': [None, 'auto', 'sqrt', 'log2'],<br> 'class_weight': [None, 'balanced'], <br> 'presort': [True, False]<br>}</pre> |
-| LogisticRegression    | <pre lang="python">{<br> 'penalty': ['l2', 'l1'],<br> 'tol': [1e-2, 1e-3, 1e-4, 1e-5],<br> 'solver': ['liblinear'],<br> 'max_iter': [100, 50, 200]<br>}</pre> |
-| SVC                   | <pre lang="python">{<br> 'C': [1],<br> 'kernel': ['rbf'],<br> 'gamma': ['scale'],<br> 'tol': [1e-2],<br> 'probability': [True],<br> 'cache_size': [1024 * 4]<br>}</pre> |
-| MultiLayer Perceptron | <pre lang="python">{<br> 'hidden_layer_sizes': [20, (20, 20)],<br> 'activation': ['identity', 'relu', 'tanh', 'relu'],<br> 'solver': ['adam', 'sgd', 'lbfgs'],<br> 'alpha': [1, 0.1, 0.01, 0.001],<br> 'learning_rate': ['constant', 'invscaling', 'adaptive']<br>}</pre> |
+| Model                     | List of hyperparameters |
+|---------------------------|-------------------------|
+| **NaiveBayes**            | <pre lang="python">{<br> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br>} </pre>|
+| **DecisionTree**          | <pre lang="python">{<br> 'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'],<br> 'max_depth': [None, 5, 10, 15],<br> 'max_features': [None, 'auto', 'sqrt', 'log2'],<br> 'class_weight': [None, 'balanced'], <br> 'presort': [True, False]<br>}</pre> |
+| **LogisticRegression**    | <pre lang="python">{<br> 'penalty': ['l2', 'l1'],<br> 'tol': [1e-2, 1e-3, 1e-4, 1e-5],<br> 'solver': ['liblinear'],<br> 'max_iter': [100, 50, 200]<br>}</pre> |
+| **SVC**                   | <pre lang="python">{<br> 'C': [1],<br> 'kernel': ['rbf'],<br> 'gamma': ['scale'],<br> 'tol': [1e-2],<br> 'probability': [True],<br> 'cache_size': [1024 * 4]<br>}</pre> |
+| **MultiLayer Perceptron** | <pre lang="python">{<br> 'hidden_layer_sizes': [20, (20, 20)],<br> 'activation': ['identity', 'relu', 'tanh', 'relu'],<br> 'solver': ['adam', 'sgd', 'lbfgs'],<br> 'alpha': [1, 0.1, 0.01, 0.001],<br> 'learning_rate': ['constant', 'invscaling', 'adaptive']<br>}</pre> |
+
+Some different metrics were shown in the log of each model but best model selection was based on the accuracy of the models. The complete list of metrics / values stored during the training is:
+
+* Accuracy
+* AUC
+* Confusion matrix
+* Precison, recall and F1-score (sklearn classification_report)
+* Values to draw ROC curve (True Positive Rate and False Positive Rate points)
 
 ### Unsupervised models
 
 ## Code
 
+NOTE: it's possible that code needs to be adapted to fit your system path / installation. Some paths should be adapted.
+
+### Supervised training
+
+The code for launching the supervised training is stored in `code\supervised` folder and it receives 3 parameters in this order:
+
+* **Time**: options available are *0.1*, *0.25*, *0.33*, *0.5*
+* **Grade**: options available are *2.5*, *5.0*, *8.5*
+* **Model type**: options available are *nb* (NaiveBayes), *dt* (Decision Tree), *lr* (Logistic Regression), *svc* (SVC), *nn* (Multi Layer Perceptron)
+
+Dataset used for training these models are stored in folder explained [here](#supervised-dataset)
+
 ## Data 
+
+### Supervised dataset
+
+There are several datasets generated for each time moment and each grade. They are stored into the folder `data/supervised-dataset`.
+
+They are stored in **Pickle** so it can be easyly read using `pandas` library. The convention for naming is:
+
+* `clean_df_TIME_GRADE.pkl` where TIME is the first parameter of the process and GRADE is the second parameter of the process
