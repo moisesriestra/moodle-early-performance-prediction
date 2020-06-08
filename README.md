@@ -47,13 +47,17 @@ Some different metrics were shown in the log of each model but best model select
 
 ### Unsupervised models
 
+The process developed for the unsupervised models aggregate the variables stored generated to obtain a subset of variables that should be easily explained when analizing the clusters. This aggregation was performed using the FeautreAggregation package in scikit-learn library and the resulting number of features were 4 when the initial dataset has up to 60 variables.
+
+Finally, generate the clusters using the KMeans algorithm. The number of clusters was selected between 1 to 10 and the optimum number of clusters obtained is 6.
+
 ## Code
 
 NOTE: it's possible that code needs to be adapted to fit your system path / installation. Some paths should be adapted.
 
 ### Supervised training
 
-The code for launching the supervised training is stored in `code\supervised` folder and it receives 3 parameters in this order:
+The code for launching the supervised training is stored in `code/supervised` folder and it receives 3 parameters in this order:
 
 * **Time**: options available are *0.1*, *0.25*, *0.33*, *0.5*
 * **Grade**: options available are *2.5*, *5.0*, *8.5*
@@ -61,12 +65,27 @@ The code for launching the supervised training is stored in `code\supervised` fo
 
 Dataset used for training these models are stored in folder explained [here](#supervised-dataset)
 
+### Unsupervised training
+
+The code for launching the supervised training is stored in `code/unsupervised` folder and it receives 2 parameters in this order:
+
+* **Time**: options available are *0.1*, *0.25*, *0.33*, *0.5*
+* **Data path**: path were input data is stored.
+
 ## Data 
 
 ### Supervised dataset
 
-There are several datasets generated for each time moment and each grade. They are stored into the folder `data/supervised-dataset`.
+There are several datasets generated for each time moment and each grade. They are stored into the folder `data/supervised`.
 
 They are stored in **Pickle** so it can be easyly read using `pandas` library. The convention for naming is:
 
 * `clean_df_TIME_GRADE.pkl` where TIME is the first parameter of the process and GRADE is the second parameter of the process
+
+### Unsupervised dataset
+
+There are several datasets generated for each time moment. They are stored into the folder `data/unsupervised`.
+
+They are stored in **CSV** so it can be easyly read using `pandas` library. The convention for naming is:
+
+* `input_TIME.csv` where TIME is the first parameter of the process
