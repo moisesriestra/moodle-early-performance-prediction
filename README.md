@@ -31,11 +31,11 @@ Each of them was trained in the moments defined previously and with 4 different 
 
 | Model                     | List of hyperparameters |
 |---------------------------|-------------------------|
-| **NaiveBayes**            | <pre lang="python">{<br> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br>} </pre>|
-| **DecisionTree**          | <pre lang="python">{<br> 'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'],<br> 'max_depth': [None, 5, 10, 15],<br> 'max_features': [None, 'auto', 'sqrt', 'log2'],<br> 'class_weight': [None, 'balanced'], <br> 'presort': [True, False]<br>}</pre> |
-| **LogisticRegression**    | <pre lang="python">{<br> 'penalty': ['l2', 'l1'],<br> 'tol': [1e-2, 1e-3, 1e-4, 1e-5],<br> 'solver': ['liblinear'],<br> 'max_iter': [100, 50, 200]<br>}</pre> |
-| **SVC**                   | <pre lang="python">{<br> 'C': [1],<br> 'kernel': ['rbf'],<br> 'gamma': ['scale'],<br> 'tol': [1e-2],<br> 'probability': [True],<br> 'cache_size': [1024 * 4]<br>}</pre> |
-| **MultiLayer Perceptron** | <pre lang="python">{<br> 'hidden_layer_sizes': [20, (20, 20)],<br> 'activation': ['identity', 'relu', 'tanh', 'relu'],<br> 'solver': ['adam', 'sgd', 'lbfgs'],<br> 'alpha': [1, 0.1, 0.01, 0.001],<br> 'learning_rate': ['constant', 'invscaling', 'adaptive']<br>}</pre> |
+| **NaiveBayes**            | <pre lang="python">{<br/> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br/>} </pre>|
+| **DecisionTree**          | <pre lang="python">{<br/> 'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'],<br/> 'max_depth': [None, 5, 10, 15],<br/> 'max_features': [None, 'auto', 'sqrt', 'log2'],<br/> 'class_weight': [None, 'balanced'], <br/> 'presort': [True, False]<br/>}</pre> |
+| **LogisticRegression**    | <pre lang="python">{<br/> 'penalty': ['l2', 'l1'],<br/> 'tol': [1e-2, 1e-3, 1e-4, 1e-5],<br/> 'solver': ['liblinear'],<br/> 'max_iter': [100, 50, 200]<br/>}</pre> |
+| **SVC**                   | <pre lang="python">{<br/> 'C': [1],<br/> 'kernel': ['rbf'],<br/> 'gamma': ['scale'],<br/> 'tol': [1e-2],<br/> 'probability': [True],<br/> 'cache_size': [1024 * 4]<br/>}</pre> |
+| **MultiLayer Perceptron** | <pre lang="python">{<br/> 'hidden_layer_sizes': [20, (20, 20)],<br/> 'activation': ['identity', 'relu', 'tanh', 'relu'],<br/> 'solver': ['adam', 'sgd', 'lbfgs'],<br/> 'alpha': [1, 0.1, 0.01, 0.001],<br/> 'learning_rate': ['constant', 'invscaling', 'adaptive']<br/>}</pre> |
 
 Some different metrics were shown in the log of each model but best model selection was based on the accuracy of the models. The complete list of metrics / values stored during the training is:
 
