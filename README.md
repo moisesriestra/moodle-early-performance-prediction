@@ -29,35 +29,57 @@ The algortihms tested in this experiment where:
 
 Each of them was trained in the moments defined previously and with 4 different cut-offs of grades (2.5, 5.0 and 8.5) so the total amount of models trained were 60 models. For these training processes, the following hyper-parameters were included inside a GridSearch with cross-validation to find the best fit of the model.
 
-<table>
-	<thead>
-		<tr>
-			<th>Model</th>
-			<th>List of hyperparameters</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><b>NaiveBayes</b></td>
-			<td>
-			
-			```python
-				{
-					'var_smoothing': [1e-09, 1e-08, 1e-010]
-				}
-			```
-			</td>
-		</tr>
-	</tbody>
-</table>
+**NaiveBayes**
+```python
+params = {
+	'var_smoothing': [1e-09, 1e-08, 1e-010]
+}
+```
 
-| Model                     | List of hyperparameters |
-|---------------------------|-------------------------|
-| **NaiveBayes**            | <pre lang="python">{<br/> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br/>} </pre>|
-| **DecisionTree**          | <pre lang="python">{<br/> 'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'],<br/> 'max_depth': [None, 5, 10, 15],<br/> 'max_features': [None, 'auto', 'sqrt', 'log2'],<br/> 'class_weight': [None, 'balanced'], <br/> 'presort': [True, False]<br/>}</pre> |
-| **LogisticRegression**    | <pre lang="python">{<br/> 'penalty': ['l2', 'l1'],<br/> 'tol': [1e-2, 1e-3, 1e-4, 1e-5],<br/> 'solver': ['liblinear'],<br/> 'max_iter': [100, 50, 200]<br/>}</pre> |
-| **SVC**                   | <pre lang="python">{<br/> 'C': [1],<br/> 'kernel': ['rbf'],<br/> 'gamma': ['scale'],<br/> 'tol': [1e-2],<br/> 'probability': [True],<br/> 'cache_size': [1024 * 4]<br/>}</pre> |
-| **MultiLayer Perceptron** | <pre lang="python">{<br/> 'hidden_layer_sizes': [20, (20, 20)],<br/> 'activation': ['identity', 'relu', 'tanh', 'relu'],<br/> 'solver': ['adam', 'sgd', 'lbfgs'],<br/> 'alpha': [1, 0.1, 0.01, 0.001],<br/> 'learning_rate': ['constant', 'invscaling', 'adaptive']<br/>}</pre> |
+**DecisionTree**
+```python
+params = {
+	'criterion': ['gini', 'entropy'],
+	'splitter': ['best', 'random'],
+	'max_depth': [None, 5, 10, 15],
+	'max_features': [None, 'auto', 'sqrt', 'log2'],
+	'class_weight': [None, 'balanced'],
+	'presort': [True, False]
+}
+```
+
+**LogisticRegression**
+```python
+params = {
+	'penalty': ['l2', 'l1'],
+	'tol': [1e-2, 1e-3, 1e-4, 1e-5],
+	'solver': ['liblinear'],
+	'max_iter': [100, 50, 200]
+}
+```
+
+**SVC**
+```python
+params = {
+	'C': [1],
+	'kernel': ['rbf'],
+	'gamma': ['scale'],
+	'tol': [1e-2],
+	'probability': [True],
+	'cache_size': [1024 * 4]
+}
+```
+
+**MultiLayer Perceptron**
+```python
+params = {
+	'hidden_layer_sizes': [20, (20, 20)],
+	'activation': ['identity', 'relu', 'tanh', 'relu'],
+	'solver': ['adam', 'sgd', 'lbfgs'],
+	'alpha': [1, 0.1, 0.01, 0.001],
+	'learning_rate': ['constant', 'invscaling', 'adaptive']
+}
+```
 
 Some different metrics were shown in the log of each model but best model selection was based on the accuracy of the models. The complete list of metrics / values stored during the training is:
 
@@ -69,7 +91,7 @@ Some different metrics were shown in the log of each model but best model select
 
 ### Unsupervised models
 
-The process developed for the unsupervised models aggregate the variables stored generated to obtain a subset of variables that should be easily explained when analizing the clusters. This aggregation was performed using the FeautreAggregation package in scikit-learn library and the resulting number of features were 4 when the initial dataset has up to 60 variables.
+The process developed for the unsupervised models aggregate the variables stored generated to obtain a subset of variables that should be easily explained when analizing the clusters. This aggregation was performed using the FeattreAggregation package in scikit-learn library and the resulting number of features were 4 when the initial dataset has up to 60 variables.
 
 Finally, generate the clusters using the KMeans algorithm. The number of clusters was selected between 1 to 10 and the optimum number of clusters using the GAP distance and fianlly we obtained that the best number of clusters for all the experiments is 6.
 
