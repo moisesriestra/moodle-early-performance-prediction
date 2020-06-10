@@ -49,7 +49,7 @@ Some different metrics were shown in the log of each model but best model select
 
 The process developed for the unsupervised models aggregate the variables stored generated to obtain a subset of variables that should be easily explained when analizing the clusters. This aggregation was performed using the FeautreAggregation package in scikit-learn library and the resulting number of features were 4 when the initial dataset has up to 60 variables.
 
-Finally, generate the clusters using the KMeans algorithm. The number of clusters was selected between 1 to 10 and the optimum number of clusters obtained is 6.
+Finally, generate the clusters using the KMeans algorithm. The number of clusters was selected between 1 to 10 and the optimum number of clusters using the GAP distance and fianlly we obtained that the best number of clusters for all the experiments is 6.
 
 ## Code
 
@@ -63,7 +63,7 @@ The code for launching the supervised training is stored in `code/supervised` fo
 * **Grade**: options available are *2.5*, *5.0*, *8.5*
 * **Model type**: options available are *nb* (NaiveBayes), *dt* (Decision Tree), *lr* (Logistic Regression), *svc* (SVC), *nn* (Multi Layer Perceptron)
 
-Dataset used for training these models are stored in folder explained [here](#supervised-dataset)
+Dataset used for training these models are stored in folder explained [Supervised dataset](#supervised-dataset)
 
 ### Unsupervised training
 
@@ -72,7 +72,13 @@ The code for launching the supervised training is stored in `code/unsupervised` 
 * **Time**: options available are *0.1*, *0.25*, *0.33*, *0.5*
 * **Data path**: path were input data is stored.
 
+Dataset used for training these models are stored in folder explained [Unsupervised dataset](#unsupervised-dataset)
+
 ## Data 
+
+This dataset is based on processing several log information stored in Moodle database. The original file is to big to be uploaded here but it could be downloaded from the following link: [dump_database](https://storage.googleapis.com/dissertation-data/dissertation-export/mysql-export)
+
+This file is a MySQL dump that has all the necessary information to generate the datasets shown in the following folders.
 
 ### Supervised dataset
 
