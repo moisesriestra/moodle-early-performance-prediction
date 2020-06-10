@@ -39,7 +39,14 @@ Each of them was trained in the moments defined previously and with 4 different 
 	<tbody>
 		<tr>
 			<td><b>NaiveBayes</b></td>
-			<td><pre lang="python">{<br/> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br/>}</pre></td>
+			<td>
+			
+			```python
+				{
+					'var_smoothing': [1e-09, 1e-08, 1e-010]
+				}
+			```
+			</td>
 		</tr>
 	</tbody>
 </table>
