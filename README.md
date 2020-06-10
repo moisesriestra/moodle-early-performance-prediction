@@ -29,6 +29,21 @@ The algortihms tested in this experiment where:
 
 Each of them was trained in the moments defined previously and with 4 different cut-offs of grades (2.5, 5.0 and 8.5) so the total amount of models trained were 60 models. For these training processes, the following hyper-parameters were included inside a GridSearch with cross-validation to find the best fit of the model.
 
+<table>
+	<thead>
+		<tr>
+			<th>Model</th>
+			<th>List of hyperparameters</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b>NaiveBayes</b></td>
+			<td><pre lang="python">{<br/> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br/>}</pre></td>
+		</tr>
+	</tbody>
+</table>
+
 | Model                     | List of hyperparameters |
 |---------------------------|-------------------------|
 | **NaiveBayes**            | <pre lang="python">{<br/> 'var_smoothing': [1e-09, 1e-08, 1e-010]<br/>} </pre>|
