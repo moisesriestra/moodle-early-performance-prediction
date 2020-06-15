@@ -120,9 +120,11 @@ Dataset used for training these models are stored in folder explained [Unsupervi
 
 ## Data 
 
-This dataset is based on processing several log information stored in Moodle database. The original file is to big to be uploaded here but it could be downloaded from the following link: [dump_database](https://storage.googleapis.com/dissertation-data/dissertation-export/mysql-export)
+This dataset is based on processing several log information stored in Moodle database. The original file is to big to be uploaded here but it could be downloaded from the following link: [dump_mysql](https://storage.googleapis.com/dissertation-data/dissertation-export/mysql-export)
 
 This file is a MySQL dump that has all the necessary information to generate the datasets shown in the following folders.
+
+If you prefer a PostgreSQL dump it could be downloaded from [dump_postgresql](https://storage.googleapis.com/dissertation-data/dissertation-export/192.168.25.168_moodle2014anonimo_2015-10-26_18h28m00s.pg_dump.sql.zip)
 
 ### Supervised dataset
 
