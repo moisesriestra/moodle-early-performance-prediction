@@ -1,7 +1,7 @@
 
 # Students' performance prediction and clustering with LMS log information
 
-This repository contains the code used in the paper *Massive LMS log data analysis for the early prediction of course-agnostic student performance*, by [Moisés Riestra-Gonzalez](http://www.pulso.uniovi.es/members/), [Maria del Puerto Paule-Ruiz](http://www.pulso.uniovi.es/members/) and [Francisco Ortin](http://www.reflection.uniovi.es/ortin/).
+This repository contains the code used in the paper *Massive LMS log data analysis for the early prediction of course-agnostic student performance*.
 
 The repository contains not only the code to train the predictive and clustering models, but also the datasets used to create those models.
 
@@ -111,6 +111,10 @@ The code for launching the supervised training is stored in `code/supervised` fo
 
 Dataset used for training these models are stored in the folder [Supervised dataset](#supervised-dataset)
 
+The code for computing the dependent variable (students' performance in solving LMS assignments)
+is placed in the `estimate.py` file in the `code/supervised` folder.
+
+
 ### Unsupervised training
 
 The code for launching the supervised training is stored in the `code/unsupervised` folder and it receives 2 parameters in this order:
@@ -119,6 +123,7 @@ The code for launching the supervised training is stored in the `code/unsupervis
 * **Data path**: path were input data is stored.
 
 Dataset used for training these models are stored in the folder  [Unsupervised dataset](#unsupervised-dataset).
+
 
 ## Data 
 
