@@ -1,7 +1,7 @@
 
 # Students' performance prediction and clustering with LMS log information
 
-This repository contains the code used in the paper *Massive LMS log data analysis for the early prediction of course-agnostic student performance*.
+This repository contains the code used in the paper *Massive LMS log data analysis for the early prediction of course-agnostic student performance*, by [Moisés Riestra-Gonzalez](http://www.pulso.uniovi.es/members/), [Maria del Puerto Paule-Ruiz](http://www.pulso.uniovi.es/members/) and [Francisco Ortin](http://www.reflection.uniovi.es/ortin/).
 
 The repository contains not only the code to train the predictive and clustering models, but also the datasets used to create those models.
 
